@@ -1,0 +1,57 @@
+all the html we write is created and stored as the oject which is done by the html parser. 
+we can literally see all the shit html we have written using the console.dir(document)
+its all parent and child stuff along with properties , in the form of an object.
+
+this stuff is done by html parser
+it creates a tree like structure
+hierarchy:
+document->html->(head, body)->till the deepest levels
+
+MORE DOM:
+1. getelementbyid
+2. getelementsbyclassname
+3.getelementsbytagname
+4. queryselector: you can literally pass anything class tag or even id. it will select on its own( more preffered) it will only give the first matched element
+5. queryselectorall: same as above but will give all the matched elements in the form of node list can be used similar to array
+
+innerText vs innerHtml vs innerTextContent:
+
+innerText only selects the text , understands stuff, hides text which is hidden by css(display:none)
+
+innerHtml gives full html , we can also add our own html and it can be rendered
+
+innerTextContent it gives full text exactly as it is (extra spaces, /n etc ), doesnt hide the stuff which is hidden even by the css
+
+
+getAttribute() vs setAttribute():
+
+getAttribute() is a method used to get all the attributes of any element 
+eg : document.querySelector('[names]').getAttribute('id')
+
+setAttribute():
+setAttribute() is a method used to set any attribute to any element , takes two arguments 
+eg :  document.querySelector('[names]').setAttribute('id','vardhan');
+
+not just that , we can directly access the common attributes without using these functions:
+eg:document.querySelector('[names]').id='vishnu';
+
+Styling the elements using js:
+we can select the element and style the elements just like css in the js using 'style'
+eg:document.querySelector('[names]').style.color='pink';
+
+the above is one ugly way to style elements 
+to optimise it we can use cssText just like normal css, but still its not very pleasing
+what we can do is create a class in the css and link that class to all the elements . simple stuff
+{ add this to the css file
+    .domi{
+    color:hotpink;
+font-size:29px;
+font-family:cursive;
+font-weight:300;
+text-decoration-line:none;
+
+do this in the js:
+element.className='domi';
+}
+}
+when we want to add styles of different classes we use the classList
