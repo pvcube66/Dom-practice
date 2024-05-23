@@ -55,3 +55,45 @@ element.className='domi';
 }
 }
 when we want to add styles of different classes we use the classList
+
+
+Element Vs Node:
+element has all properties of node + some other properties
+
+
+append vs appendChild:
+1.appendChild:
+used to add any element at the end of the selected element,
+element.appendChild(another element)
+we can also clone any element, that is by using the clone node function,it will return a clone of the selected node
+// container.appendChild(h1.cloneNode(true))
+
+the append() method doesnot return anything it returns undefined whereas the appendChild returns the appended element
+
+in append() we can also add anything even the strings anything, eg element.append(' hi there ') will work whereas in the appendChild()
+only appends the nodes ( to add strings we have to use the create text node method and add using the appepndchild)
+
+1.append doesnot return anything                                                                                 1.appendChild returns the appended child
+2.in append() we can also add anything even the strings anything, eg element.append(' hi there ')                2.in the appendChild()
+only appends the nodes ( to add strings we have to use the create text node method and add using the appepndchild)
+
+3.append() can add multiple elements at the same time        3. appendChild() only appends single element at a time, it will append only one element the other gets ignored
+
+
+note: if we append without cloning then the element will be just cut paste, if we want that element in its place and a copy of it to be appendeda then we have to use the cloneNode() method
+using append( )  and appendChild() we can only append the existing stuff, so we move to the createdElement( ) for adding new elements
+
+
+createElement()::
+it takes a single argument which is the element which we want  to create like the img, p,h1 etc 
+not just only html elements but we can literally create anything, it takes any name as the argument and creates a object/element.
+and using the append() method we can simply add this newly created element to the html
+
+
+removeChild():
+this method can only delete the childnode of any parent element, which means that the element to be removed must be a child
+this method is used to permanently delete any element from the html file    
+
+or 
+remove() : method will also work.
+select the element we want to remove: then simply element.remove( )
